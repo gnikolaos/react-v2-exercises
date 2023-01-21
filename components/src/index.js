@@ -1,7 +1,7 @@
 import reactDOM from "react-dom"
 import { App } from "./App"
 
-const appELement = <App />
+const appElement = <App />
 const root = document.querySelector("#root")
 
-reactDOM.render(appELement, root)
+reactDOM.render(appElement, root)
