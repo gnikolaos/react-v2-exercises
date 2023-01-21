@@ -1,6 +1,7 @@
-import {createRoot} from "react-dom/client"
-import { Hello } from "./Hello"
+import reactDOM from "react-dom"
+import { App } from "./App"
 
-const root = createRoot(document.querySelector("#root"))
+const appELement = <App />
+const root = document.querySelector("#root")
 
-root.render(<Hello />)
+reactDOM.render(appELement, root)
