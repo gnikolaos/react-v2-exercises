@@ -1,0 +1,5 @@
+What happens if no name prop is passed to the Welcome component? Can you set a default value for the name prop?
+
+--------
+
+If no name prop is passed to the Welcome component the '{this.props.name}' gets undefined so the classrenders only the inner html (Welcome, !) of the <p> tag without the prop.
