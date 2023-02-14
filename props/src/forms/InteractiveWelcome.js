@@ -6,6 +6,7 @@ function InteractiveWelcome() {
    const onChangeHandler = (e) => {
     setAge(e.target.value)
   }
+  
   return (
     <>
       <label htmlFor='age' name='age'>
