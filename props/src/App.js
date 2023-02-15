@@ -7,6 +7,7 @@ import InteractiveWelcome from './forms/InteractiveWelcome'
 import LogIn from './forms/LogIn'
 import UncontrolledLogIn from './forms/UncontrolledLogIn'
 import TodoList from './lists/TodoList'
+import Container from './compComposition/Container'
 
 function OnLogin(state) {
   console.log(`state: ${state.username} ${state.password} ${state.checkbox}`)
@@ -28,11 +29,12 @@ export class App extends React.Component {
           <LogIn onLogin={OnLogin} />
         </section>
         <section>
-          <UncontrolledLogIn onLogin={OnLogin}/>
+          <UncontrolledLogIn onLogin={OnLogin} />
         </section>
         <section>
           <TodoList />
         </section>
+        <Container />
       </div>
     )
   }
