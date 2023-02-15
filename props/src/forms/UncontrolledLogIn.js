@@ -17,7 +17,7 @@ class UncontrolledLogIn extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label htmlFor='username'>
             Username:&nbsp;
-            <input name='username' required onKeyUp={this.handleKeyUp} />
+            <input name='username' required autoFocus onKeyUp={this.handleKeyUp} />
           </label>
           <br />
           <label htmlFor='password'>
