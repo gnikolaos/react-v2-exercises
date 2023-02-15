@@ -71,6 +71,10 @@ function LogIn(props) {
           className='submit-button'
           disabled={!inputValue.username || !inputValue.password}
           onClick={handleSubmit}
+          style={{
+            backgroundColor: inputValue.password.length < 8 ? 'red' : 'green',
+            color: 'white'
+          }}
         >
           Log in
         </button>
