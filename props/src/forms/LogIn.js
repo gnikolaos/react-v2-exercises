@@ -1,11 +1,13 @@
 import { useState } from 'react'
 
 function LogIn(props) {
-  const [inputValue, setInputValue] = useState({
-    password: '',
+  const initialState = {
     username: '',
+    password: '',
     checkbox: false,
-  })
+  }
+
+  const [inputValue, setInputValue] = useState(initialState)
 
   const handleChange = (e) => {
     const value =
@@ -20,6 +22,11 @@ function LogIn(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     props.onLogin(inputValue)
+  }
+
+  const handleReset = (e) => {
+    e.preventDefault()
+    setInputValue(initialState)
   }
 
   return (
@@ -51,7 +58,7 @@ function LogIn(props) {
           Remember me?&nbsp;
           <input
             name='checkbox'
-            value={inputValue.checkbox}
+            checked={inputValue.checkbox}
             type='checkbox'
             onChange={handleChange}
           ></input>
@@ -66,6 +73,9 @@ function LogIn(props) {
           onClick={handleSubmit}
         >
           Log in
+        </button>
+        <button name='reset-button' type='button' onClick={handleReset}>
+          Reset
         </button>
       </form>
     </div>
