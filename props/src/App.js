@@ -5,6 +5,7 @@ import { ClickCounter } from './ClickCounter'
 import { ClickTracker } from './ClickTracker'
 import InteractiveWelcome from './forms/InteractiveWelcome'
 import LogIn from './forms/LogIn'
+import UncontrolledLogIn from './forms/UncontrolledLogIn'
 
 function OnLogin(state) {
   console.log(`state: ${state.username} ${state.password} ${state.checkbox}`)
@@ -24,6 +25,9 @@ export class App extends React.Component {
         </section>
         <section>
           <LogIn onLogin={OnLogin} />
+        </section>
+        <section>
+          <UncontrolledLogIn onLogin={OnLogin}/>
         </section>
       </div>
     )
