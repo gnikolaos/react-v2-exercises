@@ -4,6 +4,7 @@ import { Counter } from './Counter'
 import { ClickCounter } from './ClickCounter'
 import { ClickTracker } from './ClickTracker'
 import InteractiveWelcome from './forms/InteractiveWelcome'
+import LogIn from './forms/LogIn'
 
 export class App extends React.Component {
   render() {
@@ -16,6 +17,9 @@ export class App extends React.Component {
         <section>
           <h2>Forms</h2>
           <InteractiveWelcome />
+        </section>
+        <section>
+          <LogIn />
         </section>
       </div>
     )
