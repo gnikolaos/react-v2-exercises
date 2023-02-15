@@ -34,7 +34,7 @@ export class App extends React.Component {
         <section>
           <TodoList />
         </section>
-        <Container />
+        <Container title='My Title' />
       </div>
     )
   }
