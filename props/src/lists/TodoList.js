@@ -24,8 +24,10 @@ class TodoList extends React.Component {
             Todo:&nbsp;
             <input name='todo' required />
           </label>
-
+          &nbsp;
           <button type='submit'>Add</button>
+          &nbsp;
+          <button type='button' onClick={() => this.setState({todoListItems: []})}>Reset</button>
         </form>
         <div>
           <ul>
