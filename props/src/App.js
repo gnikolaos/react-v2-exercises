@@ -6,6 +6,10 @@ import { ClickTracker } from './ClickTracker'
 import InteractiveWelcome from './forms/InteractiveWelcome'
 import LogIn from './forms/LogIn'
 
+function OnLogin(state) {
+  console.log(`state: ${state.username} ${state.password} ${state.checkbox}`)
+}
+
 export class App extends React.Component {
   render() {
     return (
@@ -19,7 +23,7 @@ export class App extends React.Component {
           <InteractiveWelcome />
         </section>
         <section>
-          <LogIn />
+          <LogIn onLogin={OnLogin} />
         </section>
       </div>
     )

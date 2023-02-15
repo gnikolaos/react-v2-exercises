@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function LogIn() {
+function LogIn(props) {
   const [inputValue, setInputValue] = useState({
     password: '',
     username: '',
@@ -11,19 +11,28 @@ function LogIn() {
     const value =
       e.target.type === 'checkbox' ? e.target.checked : e.target.value
 
-    setInputValue(prev => ({
+    setInputValue((prev) => ({
       ...prev,
-      [e.target.name]: value
+      [e.target.name]: value,
     }))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    props.onLogin(inputValue)
   }
 
   return (
     <div>
       <h2>Log In Form</h2>
-      <div>
+      <form>
         <label htmlFor='username'>
           Username:&nbsp;
-          <input name='username' value={inputValue.username} onChange={handleChange}></input>
+          <input
+            name='username'
+            value={inputValue.username}
+            onChange={handleChange}
+          ></input>
         </label>
         <br />
 
@@ -47,7 +56,18 @@ function LogIn() {
             onChange={handleChange}
           ></input>
         </label>
-      </div>
+        <br />
+
+        <button
+          name='submit-button'
+          type='submit'
+          className='submit-button'
+          disabled={!inputValue.username || !inputValue.password}
+          onClick={handleSubmit}
+        >
+          Log in
+        </button>
+      </form>
     </div>
   )
 }
