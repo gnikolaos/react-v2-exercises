@@ -4,7 +4,7 @@ import { Age } from './Age'
 export class Welcome extends React.Component {
   render() {
     return (
-      <div>
+      <div className='welcome'>
         <p>Welcome, {this.props.name}!</p>
         {this.props.age > 18 &&
           this.props.age < 65 &&
