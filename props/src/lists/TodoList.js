@@ -1,18 +1,27 @@
 import React from 'react'
 
 class TodoList extends React.Component {
+  listItems
   state = {
     todoListItems: [],
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    let listItems = this.state.todoListItems
-    listItems.push(e.target.elements.todo.value)
+    this.listItems = this.state.todoListItems
+    this.listItems.push(e.target.elements.todo.value)
     this.setState({
-      todoListItems: listItems,
+      todoListItems: this.listItems,
     })
     e.target.elements.todo.value = ''
+  }
+
+  handleDelete = (e) => {
+    e.preventDefault()
+    this.listItems.splice(e.target.id, 1)
+    this.setState({
+      todoListItems: this.listItems,
+    })
   }
 
   render() {
@@ -27,12 +36,22 @@ class TodoList extends React.Component {
           &nbsp;
           <button type='submit'>Add</button>
           &nbsp;
-          <button type='button' onClick={() => this.setState({todoListItems: []})}>Reset</button>
+          <button
+            type='button'
+            onClick={() => this.setState({ todoListItems: [] })}
+          >
+            Reset
+          </button>
         </form>
         <div>
           <ul>
             {this.state.todoListItems.map((todo, index) => (
-              <li key={index}>{todo}</li>
+              <li key={index}>
+                {todo}&nbsp;
+                <button id={index} onClick={this.handleDelete}>
+                  delete
+                </button>
+              </li>
             ))}
           </ul>
         </div>
