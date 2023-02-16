@@ -1,4 +1,4 @@
-function Sum({ numbers }) {
+function Sum({ numbers=[1,4,5] }) {
   const calculateSum = numbers.reduce((total, current) => {
     return total + current
   }, 0)

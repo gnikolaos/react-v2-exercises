@@ -1,0 +1,3 @@
+What happens if the numbers prop of the Sum component is not set? How can you set a default value for this prop?
+
+- If the numbers prop of the Sum component is not set the build fails, cause the prop is undefined. We can set a default value for the numbers when we destructure the prop.

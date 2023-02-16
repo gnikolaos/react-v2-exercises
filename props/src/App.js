@@ -39,7 +39,7 @@ export class App extends React.Component {
         <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage />
         </LanguageContext.Provider>
-        <Sum numbers={[1, 5, 4, 10]} />
+        <Sum />
         <Welcome name={<b>Bold Garen</b>} age='15' />
         <Counter initValue={100} incrementValue={-5} incrementInterval={1000} />
         <ClickCounter />
