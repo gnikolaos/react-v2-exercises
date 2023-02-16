@@ -1,7 +1,6 @@
 import React from 'react'
 
 class TodoList extends React.Component {
-  listItems
   state = {
     todoListItems: [],
   }
@@ -45,14 +44,7 @@ class TodoList extends React.Component {
         </form>
         <div>
           <ul>
-            {this.state.todoListItems.map((todo, index) => (
-              <li key={index}>
-                {todo}&nbsp;
-                <button id={index} onClick={this.handleDelete}>
-                  delete
-                </button>
-              </li>
-            ))}
+            {this.props.render(this.state.todoListItems, this.handleDelete)}
           </ul>
         </div>
       </>

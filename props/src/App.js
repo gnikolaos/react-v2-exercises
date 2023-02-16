@@ -32,7 +32,18 @@ export class App extends React.Component {
           <UncontrolledLogIn onLogin={OnLogin} />
         </section>
         <section>
-          <TodoList />
+          <TodoList
+            render={(todoListItems, handleDelete) => {
+              return todoListItems.map((todo, index) => (
+                <li key={index}>
+                  {todo}&nbsp;
+                  <button id={index} onClick={handleDelete}>
+                    delete
+                  </button>
+                </li>
+              ))
+            }}
+          />
         </section>
         <Container title='My Title' />
       </div>
