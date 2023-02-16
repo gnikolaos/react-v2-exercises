@@ -10,6 +10,7 @@ import TodoList from './lists/TodoList'
 import Container from './compComposition/Container'
 import DisplayLanguage from './DisplayLanguage'
 import LanguageContext from './LanguageContext'
+import Sum from './Sum'
 
 function OnLogin(state) {
   console.log(`state: ${state.username} ${state.password} ${state.checkbox}`)
@@ -38,6 +39,7 @@ export class App extends React.Component {
         <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage />
         </LanguageContext.Provider>
+        <Sum numbers={[1, 5, 4, 10]} />
         <Welcome name={<b>Bold Garen</b>} age='15' />
         <Counter initValue={100} incrementValue={-5} incrementInterval={1000} />
         <ClickCounter />
