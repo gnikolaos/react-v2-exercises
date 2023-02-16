@@ -1,5 +1,5 @@
 import React from 'react'
-import { Welcome } from './Welcome'
+import Welcome from './Welcome'
 import { Counter } from './Counter'
 import { ClickCounter } from './ClickCounter'
 import { ClickTracker } from './ClickTracker'
