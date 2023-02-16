@@ -8,15 +8,36 @@ import LogIn from './forms/LogIn'
 import UncontrolledLogIn from './forms/UncontrolledLogIn'
 import TodoList from './lists/TodoList'
 import Container from './compComposition/Container'
+import DisplayLanguage from './DisplayLanguage'
+import LanguageContext from './LanguageContext'
 
 function OnLogin(state) {
   console.log(`state: ${state.username} ${state.password} ${state.checkbox}`)
 }
 
 export class App extends React.Component {
+  state = {
+    language: 'en',
+  }
+  handleLanguageChange = (e) => {
+    this.setState({
+      language: e.target.value,
+    })
+  }
   render() {
     return (
       <div>
+        <select
+          value={this.state.language}
+          onChange={this.handleLanguageChange}
+        >
+          <option value='en'>English</option>
+          <option value='el'>Ελληνικά</option>
+        </select>
+        <hr />
+        <LanguageContext.Provider value={this.state.language}>
+          <DisplayLanguage />
+        </LanguageContext.Provider>
         <Welcome name={<b>Bold Garen</b>} age='15' />
         <Counter initValue={100} incrementValue={-5} incrementInterval={1000} />
         <ClickCounter />
