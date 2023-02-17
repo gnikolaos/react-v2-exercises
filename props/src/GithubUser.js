@@ -1,9 +1,15 @@
 import useGithubUser from './useGithubUser'
 
 function GithubUser({ username = 'dizars1776' }) {
-  const { data, loading, error } = useGithubUser(username)
+  const { data, onFetchUser, loading, error } = useGithubUser(username)
+
+  function handleGetUserData() {
+    onFetchUser(username)
+  }
+
   return (
     <div>
+      <button onClick={handleGetUserData}>Load user data</button>
       {loading && <h2>Loading...</h2>}
       {error && <h2>Error</h2>}
       {data && (
