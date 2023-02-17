@@ -11,6 +11,7 @@ import Container from './compComposition/Container'
 import DisplayLanguage from './DisplayLanguage'
 import LanguageContext from './LanguageContext'
 import Sum from './Sum'
+import HookClickCounter from './HookClickCounter'
 
 function OnLogin(state) {
   console.log(`state: ${state.username} ${state.password} ${state.checkbox}`)
@@ -43,6 +44,7 @@ export class App extends React.Component {
         <Welcome name={<b>Bold Garen</b>} age='15' />
         <Counter initValue={100} incrementValue={-5} incrementInterval={1000} />
         <ClickCounter />
+        <HookClickCounter />
         <ClickTracker />
         <section>
           <h2>Forms</h2>
