@@ -9,7 +9,6 @@ function GithubUser({ username = 'dizars1776' }) {
         return response.json()
       })
       .then((json) => {
-        console.log(json)
         setData(json)
       })
   }, [username])
@@ -19,7 +18,12 @@ function GithubUser({ username = 'dizars1776' }) {
       {data && (
         <div>
           <h1>{data.name}</h1>
-          <img src={data.avatar_url} height='200px' style={{borderRadius: '50%'}} alt='profile avatar' />
+          <img
+            src={data.avatar_url}
+            height='200px'
+            style={{ borderRadius: '50%' }}
+            alt='profile avatar'
+          />
         </div>
       )}
     </div>
