@@ -13,6 +13,7 @@ import LanguageContext from './LanguageContext'
 import Sum from './Sum'
 import HookClickCounter from './HookClickCounter'
 import HookCounter from './HookCounter'
+import GithubUser from './GithubUser'
 
 function OnLogin(state) {
   console.log(`state: ${state.username} ${state.password} ${state.checkbox}`)
@@ -41,6 +42,7 @@ export class App extends React.Component {
         <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage />
         </LanguageContext.Provider>
+        <GithubUser />
         <Sum />
         <Welcome name={<b>Bold Garen</b>} age='15' />
         <Counter initValue={100} incrementValue={-5} incrementInterval={1000} />
