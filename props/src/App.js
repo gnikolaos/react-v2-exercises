@@ -14,6 +14,7 @@ import Sum from './Sum'
 import HookClickCounter from './HookClickCounter'
 import HookCounter from './HookCounter'
 import GithubUser from './GithubUser'
+import GithubUserList from './GithubUserList'
 
 function OnLogin(state) {
   console.log(`state: ${state.username} ${state.password} ${state.checkbox}`)
@@ -43,6 +44,7 @@ export class App extends React.Component {
           <DisplayLanguage />
         </LanguageContext.Provider>
         <GithubUser />
+        <GithubUserList />
         <Sum />
         <Welcome name={<b>Bold Garen</b>} age='15' />
         <Counter initValue={100} incrementValue={-5} incrementInterval={1000} />
