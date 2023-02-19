@@ -15,6 +15,7 @@ import HookClickCounter from './HookClickCounter'
 import HookCounter from './HookCounter'
 import GithubUser from './GithubUser'
 import GithubUserList from './GithubUserList'
+import CarDetails from './forms/CarDetails'
 
 function OnLogin(state) {
   console.log(`state: ${state.username} ${state.password} ${state.checkbox}`)
@@ -43,6 +44,7 @@ export class App extends React.Component {
         <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage />
         </LanguageContext.Provider>
+        <CarDetails />
         <GithubUser />
         <GithubUserList />
         <Sum />
