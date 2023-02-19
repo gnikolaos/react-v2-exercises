@@ -16,6 +16,7 @@ import HookCounter from './HookCounter'
 import GithubUser from './GithubUser'
 import GithubUserList from './GithubUserList'
 import CarDetails from './forms/CarDetails'
+import DisplayLanguage2 from './DisplayLanguage2'
 
 function OnLogin(state) {
   console.log(`state: ${state.username} ${state.password} ${state.checkbox}`)
@@ -43,6 +44,7 @@ export class App extends React.Component {
         <hr />
         <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage />
+          <DisplayLanguage2 />
         </LanguageContext.Provider>
         <CarDetails />
         <GithubUser />
