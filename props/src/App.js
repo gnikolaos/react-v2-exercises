@@ -17,7 +17,24 @@ import GithubUser from './GithubUser'
 import GithubUserList from './GithubUserList'
 import CarDetails from './forms/CarDetails'
 import DisplayLanguage2 from './DisplayLanguage2'
-
+import FilteredList from './FilteredList'
+const objectList = {
+  obj1: {
+    id: 1,
+    name: 'Table',
+    age: 10,
+  },
+  obj2: {
+    id: 2,
+    name: 'Sofa',
+    age: 19,
+  },
+  obj3: {
+    id: 2,
+    name: 'Bookcase',
+    age: 25,
+  }
+}
 function OnLogin(state) {
   console.log(`state: ${state.username} ${state.password} ${state.checkbox}`)
 }
@@ -46,6 +63,8 @@ export class App extends React.Component {
           <DisplayLanguage />
           <DisplayLanguage2 />
         </LanguageContext.Provider>
+        <hr />
+        <FilteredList objectList = {objectList} />
         <CarDetails />
         <GithubUser />
         <GithubUserList />
