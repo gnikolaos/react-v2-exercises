@@ -1,12 +1,15 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Welcome from '../Welcome'
+import HookCounter  from '../HookCounter'
+
 class App extends React.Component {
   render() {
     return (
       <div>
         <Routes>
           <Route path='/' element={<Welcome name='Percival' />} />
+          <Route path='/counter' element={<HookCounter />} />
         </Routes>
       </div>
     )

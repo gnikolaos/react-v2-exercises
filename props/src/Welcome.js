@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Age } from './Age'
 
 function Welcome({ name='Garen', age }) {
@@ -7,6 +8,9 @@ function Welcome({ name='Garen', age }) {
       <p>Welcome, {name}!</p>
       {age > 18 && age < 65 && name === 'John' && <Age age={age} />}
       <Age age={age} />
+      <div>
+        <Link to='/counter'>Go to Hook Counter</Link>
+      </div>
     </div>
   )
 }
