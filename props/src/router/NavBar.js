@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 function NavBar() {
-  const username = 'dizars1776'
   return (
     <nav>
       <ul>
@@ -12,7 +11,7 @@ function NavBar() {
           <Link to='/counter'>Hook Counter</Link>
         </li>
         <li>
-          <Link to={`/users/${username}`}>Show Github user: {username}</Link>
+          <Link to='/users/'>Github User List</Link>
         </li>
       </ul>
     </nav>

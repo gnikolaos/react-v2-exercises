@@ -1,22 +1,21 @@
 import React from 'react'
-import { Routes, Route, Link, useParams } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import Welcome from '../Welcome'
 import HookCounter from '../HookCounter'
-import ShowGithubUser from './ShowGithubUser'
 import NavBar from './NavBar'
+import GithubUserList from './GithubUserList2'
+import ShowGithubUser from './ShowGithubUser'
 
 function App() {
-  const { username } = useParams()
   return (
     <div>
       <NavBar />
       <Routes>
         <Route path='/' element={<Welcome name='Percival' />} />
         <Route path='/counter' element={<HookCounter />} />
-        <Route
-          path='/users/:username'
-          element={<ShowGithubUser username={username} />}
-        />
+        <Route path='/users/' element={<GithubUserList />}>
+          <Route path=':username' element={<ShowGithubUser />} />
+        </Route>
         <Route
           path='*'
           element={
