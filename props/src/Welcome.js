@@ -1,18 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Age } from './Age'
 
 function Welcome({ name='Garen', age }) {
-  const username = 'dizars1776'
   return (
     <div className='welcome'>
       <p>Welcome, {name}!</p>
       {age > 18 && age < 65 && name === 'John' && <Age age={age} />}
       <Age age={age} />
-      <div>
-        <Link to='/counter'>Go to Hook Counter</Link>&nbsp;&nbsp;
-        <Link to={`/users/${username}`}>Show Github user: {username}</Link>
-      </div>
     </div>
   )
 }
