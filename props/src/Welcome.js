@@ -10,7 +10,7 @@ function Welcome({ name='Garen', age }) {
       {age > 18 && age < 65 && name === 'John' && <Age age={age} />}
       <Age age={age} />
       <div>
-        <Link to='/counter'>Go to Hook Counter</Link>
+        <Link to='/counter'>Go to Hook Counter</Link>&nbsp;&nbsp;
         <Link to={`/users/${username}`}>Show Github user: {username}</Link>
       </div>
     </div>
