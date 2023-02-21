@@ -14,6 +14,14 @@ function App() {
         <Route path='/' element={<Welcome name='Percival' />} />
         <Route path='/counter' element={<HookCounter />} />
         <Route path='/users/' element={<GithubUserList />}>
+          <Route
+            index
+            element={
+              <div>
+                <p>Add a user and select it.</p>
+              </div>
+            }
+          />
           <Route path=':username' element={<ShowGithubUser />} />
         </Route>
         <Route
