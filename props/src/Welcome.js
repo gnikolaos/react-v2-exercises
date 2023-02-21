@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Age } from './Age'
 
 function Welcome({ name='Garen', age }) {
+  const username = 'dizars1776'
   return (
     <div className='welcome'>
       <p>Welcome, {name}!</p>
@@ -10,6 +11,7 @@ function Welcome({ name='Garen', age }) {
       <Age age={age} />
       <div>
         <Link to='/counter'>Go to Hook Counter</Link>
+        <Link to={`/users/${username}`}>Show Github user: {username}</Link>
       </div>
     </div>
   )
